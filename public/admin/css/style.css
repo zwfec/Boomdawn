@@ -1,0 +1,14 @@
+#alert-success,#alert-error {
+  position: fixed;
+  z-index: 9999;
+  top: 0px;
+  left: 33%;
+  width: 33%;
+  display: none;
+}
+form {
+  margin: 0;
+}
+.opera {
+  margin-right: 10px;
+}
