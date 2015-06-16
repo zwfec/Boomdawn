@@ -19,7 +19,7 @@
               <h4 class="title">友情链接</h4>
               <div class="content tag-cloud">
                 @foreach($link as $v)
-                <a href="{{ $v->url }}" title="{{ $v->des }}">{{ $v->name }}</a>
+                <a href="{{ $v->url }}" title="{{ $v->des }}" target="_blank">{{ $v->name }}</a>
                 @endforeach
               </div>
           </div>

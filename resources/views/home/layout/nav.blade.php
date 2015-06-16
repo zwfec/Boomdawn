@@ -8,12 +8,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">{{ $webset->title }}</a>
+            <a class="navbar-brand" href="{{ url('/') }}">{{ $webset->title }}</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
+                <li>
+                  <a href="{{ url('/') }}">首页</a>
+                </li>
                 @foreach($nav as $v)
                 <li>
                   <a href="{{ url('category/'.$v->id) }}">{{ $v->name }}</a>

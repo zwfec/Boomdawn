@@ -7,7 +7,10 @@ use Request;
 use Validator;
 use App\Models\User;
 use App\Models\Article;
+use App\Models\Category;
+use App\Models\Tag;
 use App\Models\TagArticle;
+use App\Models\About;
 use Session;
 
 class HomeController extends Controller
@@ -29,7 +32,9 @@ class HomeController extends Controller
     $list = Article::where('is_show',1)
     ->where('category_id',$id)->orderBy('sort','desc')
     ->simplePaginate(empty(session('page_num')) ? 10 : session('page_num'));
-    return view('home.index')->withList($list);
+    //获得分类名
+    $name = Category::where('id',$id)->pluck('name');
+    return view('home.index')->withList($list)->withName($name);
   }
 
   public function getTag($id)
@@ -41,6 +46,23 @@ class HomeController extends Controller
     $list = Article::where('is_show',1)
     ->whereIn('id',$article_ids)->orderBy('sort','desc')
     ->simplePaginate(empty(session('page_num')) ? 10 : session('page_num'));
-    return view('home.index')->withList($list);
+    //获得标签名称
+    $name = Tag::where('id',$id)->pluck('name');
+    return view('home.index')->withList($list)->withName($name);
+  }
+
+  public function getAbout()
+  {
+    //获得关于信息
+    $about = About::first();
+    return view('home.about')->withAbout($about)->withName('关于');
+  }
+
+  public function getArticle($id)
+  {
+    $id = (int)$id;
+    //获得关于信息
+    $article = Article::find($id);
+    return view('home.article')->withArticle($article)->withName($article->title);
   }
 }

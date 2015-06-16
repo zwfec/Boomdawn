@@ -7,7 +7,7 @@
     <meta name="description" content="{{ $webset->des }}">
     <meta name="keyword" content="{{ $webset->keyword }}">
 
-    <title>{{ $webset->title }}</title>
+    <title>{{ empty($name) ? '' : $name.' - ' }} {{ $webset->title }}</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset('home/css/bootstrap.min.css') }}" rel="stylesheet">
