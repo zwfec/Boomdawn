@@ -55,8 +55,8 @@
                                       {{ $v->sort }}
                                     </td>
                                     <td>
-                                      <a href="javascript:;" data-toggle="modal" data-target="#myModal" class="opera edit" tag-id="{{ $v->id }}" name="{{ $v->name }}" sort="{{ $v->sort }}"><i class="table-edit"></i></a>
-                                      <a href="{{ url('manage/tag/del/'.$v->id) }}" class="opera del"><i class="table-delete"></i></a>
+                                      <a href="javascript:;" data-toggle="modal" data-target="#myModal" class="opera edit" link-id="{{ $v->id }}" name="{{ $v->name }}" des="{{ $v->des }}" url="{{ $v->url }}" sort="{{ $v->sort }}"><i class="table-edit"></i></a>
+                                      <a href="{{ url('manage/link/del/'.$v->id) }}" class="opera del"><i class="table-delete"></i></a>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -78,12 +78,22 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">添加</h4>
       </div>
-      <form action="{{ url('manage/tag/add') }}" method="post">
+      <form action="{{ url('manage/link/add') }}" method="post">
         <div class="modal-body">
           <div class="container-fluid">
             <div class="field-box">
                 <label>名称:</label>
                 <input class="span5 inline-input" data-trigger="focus" type="text" name="name">
+            </div>
+            <div class="field-box">
+                <label>描述:</label>
+                <input class="span5 inline-input" data-trigger="focus" type="text" name="des">
+            </div>
+            <div class="field-box">
+                <label>地址:</label>
+                <div class="predefined">
+                    <input class="span5 inline-input" type="text" name="url" data-trigger="focus" value="http://">
+                </div>
             </div>
             <div class="field-box">
                 <label>排序:</label>
@@ -108,16 +118,22 @@
   $(function(){
     $('.new-product').click(function() {
       $('input[name=name]').val('');
+      $('input[name=des]').val('');
+      $('input[name=url]').val('http://');
       $('input[name=sort]').val('0');
       $('input[name=id]').val('0');
     });
 
     $('.edit').click(function() {
       var name = $(this).attr('name');
+      var des  = $(this).attr('des');
+      var url  = $(this).attr('url');
       var sort = $(this).attr('sort');
-      var id   = $(this).attr('tag-id');
+      var id   = $(this).attr('link-id');
 
       $('input[name=name]').val(name);
+      $('input[name=des]').val(des);
+      $('input[name=url]').val(url);
       $('input[name=sort]').val(sort);
       $('input[name=id]').val(id);
     });
