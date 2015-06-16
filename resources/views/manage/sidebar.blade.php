@@ -30,16 +30,22 @@
                 <span>链接</span>
             </a>
         </li>
-        <li>
-            <a href="{{ url('manage/gallery') }}">
-                <i class="icon-picture"></i>
-                <span>相册</span>
-            </a>
-        </li>
-        <li>
+        <li class-name="about">
             <a href="{{ url('manage/about') }}">
                 <i class="icon-calendar-empty"></i>
                 <span>关于</span>
+            </a>
+        </li>
+        <li class-name="set">
+            <a href="{{ url('manage/set') }}">
+                <i class="icon-cog"></i>
+                <span>设置</span>
+            </a>
+        </li>
+        {{-- <li>
+            <a href="{{ url('manage/gallery') }}">
+                <i class="icon-picture"></i>
+                <span>相册</span>
             </a>
         </li>
         <li>
@@ -53,12 +59,6 @@
                 <i class="icon-play-circle"></i>
                 <span>视频</span>
             </a>
-        </li>
-        <li>
-            <a href="#">
-                <i class="icon-cog"></i>
-                <span>设置</span>
-            </a>
-        </li>
+        </li> --}}
     </ul>
 </div>

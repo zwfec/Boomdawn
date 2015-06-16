@@ -9,6 +9,7 @@ return array(
     'CreateArticlesTable' => $baseDir . '/database/migrations/2015_06_14_101231_create_articles_table.php',
     'CreateCategorysTable' => $baseDir . '/database/migrations/2015_06_13_160647_create_categorys_table.php',
     'CreateLinksTable' => $baseDir . '/database/migrations/2015_06_16_093134_create_links_table.php',
+    'CreateSetsTable' => $baseDir . '/database/migrations/2015_06_16_151902_create_sets_table.php',
     'CreateTagArticleTable' => $baseDir . '/database/migrations/2015_06_14_094507_create_tag_article_table.php',
     'CreateTagsTable' => $baseDir . '/database/migrations/2015_06_13_222825_create_tags_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2015_06_12_230955_create_users_table.php',

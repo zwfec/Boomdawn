@@ -9,7 +9,7 @@
 						<div class="table-wrapper orders-table section">
 								<div class="row-fluid head" style="margin-bottom:30px;">
 										<div class="span12">
-												<h4>欢迎回来，dawn</h4>
+												<h4>欢迎回来，{{ $user->username }}</h4>
 										</div>
 								</div>
 
