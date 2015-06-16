@@ -23,4 +23,39 @@ class SetController extends Controller
     return view('manage.set')->withSet($set);
   }
 
+  public function postEdit()
+  {
+    $title    = Request::input('title');
+    $keyword  = Request::input('keyword');
+    $des      = Request::input('des');
+    $copy     = Request::input('copy');
+    $page_num = Request::input('page_num');
+    $id       = Request::input('id');
+    $page_num = abs(intval($page_num));
+    //审核数据
+    $v = Validator::make([
+      'title' => $title,
+    ], [
+      'title' => 'required',
+    ],[
+      'title.required' => '网站名称不能为空',
+    ]);
+
+    if ($v->fails()) {
+      return redirect('manage/set')->withErrors($v->errors())->withStatus(2);
+    }
+
+    //编辑
+    $set = Set::where('id',$id)->first();
+    $set->title = $title;
+    $set->keyword = $keyword;
+    $set->des = $des;
+    $set->copy = $copy;
+    $set->page_num = $page_num;
+    $affectedRows = $set->save();
+    if ($affectedRows) {
+      return redirect('manage/set')->withErrors('修改成功')->withStatus(1);
+    }
+  }
+
 }

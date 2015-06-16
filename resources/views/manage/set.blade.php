@@ -31,7 +31,7 @@
             </div>
             <div class="field-box">
                 <label>分页条数:</label>
-                <input class="span8 inline-input" data-toggle="tooltip" data-trigger="focus" title="" data-placement="top" type="text" data-original-title="文章分页的数量" name="copy" value="{{        $set->page_num }}" required="">
+                <input class="span8 inline-input" data-toggle="tooltip" data-trigger="focus" title="" data-placement="top" type="text" data-original-title="文章分页的数量" name="page_num" value="{{        $set->page_num }}" required="">
             </div>
             <div class="field-box">
                 <label></label>
