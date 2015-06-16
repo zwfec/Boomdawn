@@ -7,6 +7,7 @@ use Request;
 use Validator;
 use App\Models\User;
 use Hash;
+use Session;
 
 class LoginController extends Controller
 {
@@ -16,7 +17,7 @@ class LoginController extends Controller
   public function index ()
   {
     //判断是否已经登录
-    if (session('uid') && session('username')) {
+    if (Session::has('uid') && Session::has('username')) {
       return redirect('manage');
     }
     return view('home.login');

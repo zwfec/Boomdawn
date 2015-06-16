@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Session;
 
 class LoginMiddleware
 {
@@ -15,7 +16,7 @@ class LoginMiddleware
      */
     public function handle($request, Closure $next)
     {
-      if (!session('uid') || !session('username')) {
+      if (!Session::has('uid') || !Session::has('username')) {
         return redirect('login');
       }
       return $next($request);
