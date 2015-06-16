@@ -25,16 +25,20 @@ class UserTableSeeder extends Seeder {
     public function run()
     {
         DB::table('users')->delete();
-        DB::table('users')->insert(['username'=>'admin','password'=>bcrypt('admin')]);
+        DB::table('users')->insert(['id'=>1,'username'=>'admin','password'=>bcrypt('admin')]);
 
         DB::table('sets')->delete();
         DB::table('sets')->insert([
+          'id'       => 1,
           'title'    => 'Boomdawn',
           'keyword'  => 'Boomdawn',
           'des'      => 'Boomdawn Blog',
           'copy'     => 'Powered by Boomdawn',
           'page_num' => '10',
-          ]);
+        ]);
+
+        DB::table('abouts')->delete();
+        DB::table('abouts')->insert(['id'=>1,'title'=>'关于','content'=>' ']);
     }
 
 }
