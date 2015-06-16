@@ -1,13 +1,5 @@
 <?php
 
-Route::get('/', function () {
-    return '主页';
-});
-
-//登录
-Route::get('login', 'Home\LoginController@index');
-Route::post('login', 'Home\LoginController@store');
-
 //后台
 Route::group(['middleware' => 'login', 'prefix' => 'manage','namespace' => 'Manage'], function(){
   Route::controller('about', 'AboutController');
@@ -17,4 +9,10 @@ Route::group(['middleware' => 'login', 'prefix' => 'manage','namespace' => 'Mana
   Route::controller('tag', 'TagController');
   Route::controller('category', 'CategoryController');
   Route::controller('/', 'WelcomeController');
+});
+
+//前台
+Route::group(['middleware' => 'getset','namespace' => 'Home'], function(){
+  Route::controller('login', 'LoginController');
+  Route::controller('/', 'HomeController');
 });

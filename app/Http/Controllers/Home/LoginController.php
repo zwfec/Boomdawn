@@ -14,7 +14,7 @@ class LoginController extends Controller
   /**
    * 登录页面
    */
-  public function index ()
+  public function getIndex ()
   {
     //判断是否已经登录
     if (Session::has('uid') && Session::has('username')) {
@@ -26,7 +26,7 @@ class LoginController extends Controller
   /**
    * 验证登录
    */
-  public function store()
+  public function postIndex()
   {
     $username = Request::input('username');
     $password = Request::input('password');
