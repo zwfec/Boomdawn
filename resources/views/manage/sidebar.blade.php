@@ -24,7 +24,7 @@
               <span>文章</span>
           </a>
         </li>
-        <li>
+        <li class-name="link">
             <a href="{{ url('manage/link') }}">
                 <i class="icon-random"></i>
                 <span>链接</span>

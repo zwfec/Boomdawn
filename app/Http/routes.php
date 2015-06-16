@@ -10,6 +10,7 @@ Route::post('login', 'Home\LoginController@store');
 
 //后台
 Route::group(['middleware' => 'login', 'prefix' => 'manage','namespace' => 'Manage'], function(){
+  Route::controller('link', 'LinkController');
   Route::controller('article', 'ArticleController');
   Route::controller('tag', 'TagController');
   Route::controller('category', 'CategoryController');
