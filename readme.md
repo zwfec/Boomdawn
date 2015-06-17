@@ -20,11 +20,11 @@
 
 2.打开 `.env` 修改以下信息
 
-> APP_DEBUG = false
-> DB_HOST = 数据库地址
-> DB_DATABASE = 数据库名称
-> DB_USERNAME = 数据库用户名
-> DB_PASSWORD = 数据库密码
+APP_DEBUG = false
+DB_HOST = 数据库地址
+DB_DATABASE = 数据库名称
+DB_USERNAME = 数据库用户名
+DB_PASSWORD = 数据库密码
 
 3.命令行进入项目目录 输入 `php artisan key:generate` 生成安全密匙
 
