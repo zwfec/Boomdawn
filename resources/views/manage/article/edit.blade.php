@@ -59,12 +59,14 @@
             @if(!empty($tags->first()))
               <div class="field-box">
                   <label>标签:</label>
-                  @foreach($tags as $tag)
-                    <label class="checkbox">
-                        <div class="checker"><span><input type="checkbox" name="tag_id[]" value="{{ $tag->id }}" @if(in_array($tag->id, $tags_cur)) checked="checked" @endif></span></div>
-                        {{ $tag->name }}
-                    </label>
-                  @endforeach
+                  <div class="span8">
+                    @foreach($tags as $tag)
+                      <label class="checkbox">
+                          <div class="checker"><span><input type="checkbox" name="tag_id[]" value="{{ $tag->id }}" @if(in_array($tag->id, $tags_cur)) checked="checked" @endif></span></div>
+                          {{ $tag->name }}
+                      </label>
+                    @endforeach
+                  </div>
               </div>
             @endif
             <div class="field-box">
