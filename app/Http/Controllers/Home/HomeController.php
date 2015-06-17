@@ -21,7 +21,7 @@ class HomeController extends Controller
   public function getIndex()
   {
     //获得文章列表
-    $list = Article::where('is_show',1)->orderBy('sort','desc')->simplePaginate(empty(session('page_num')) ? 10 : session('page_num'));
+    $list = Article::where('is_show',1)->orderBy('sort','desc')->orderBy('id','desc')->simplePaginate(empty(session('page_num')) ? 10 : session('page_num'));
     return view('home.index')->withList($list);
   }
 
@@ -30,7 +30,7 @@ class HomeController extends Controller
     $id = (int)$id;
     //获得文章列表
     $list = Article::where('is_show',1)
-    ->where('category_id',$id)->orderBy('sort','desc')
+    ->where('category_id',$id)->orderBy('sort','desc')->orderBy('id','desc')
     ->simplePaginate(empty(session('page_num')) ? 10 : session('page_num'));
     //获得分类名
     $name = Category::where('id',$id)->pluck('name');
@@ -45,7 +45,7 @@ class HomeController extends Controller
     $article_ids = TagArticle::where('id',$id)->lists('article_id')->toArray();
     //获得文章列表
     $list = Article::where('is_show',1)
-    ->whereIn('id',$article_ids)->orderBy('sort','desc')
+    ->whereIn('id',$article_ids)->orderBy('sort','desc')->orderBy('id','desc')
     ->simplePaginate(empty(session('page_num')) ? 10 : session('page_num'));
     //获得标签名称
     $name = Tag::where('id',$id)->pluck('name');

@@ -16,6 +16,9 @@ p {
 p a {
   text-decoration: underline;
 }
+p img {
+  max-width: 780px;
+}
 h1,
 h2,
 h3,
