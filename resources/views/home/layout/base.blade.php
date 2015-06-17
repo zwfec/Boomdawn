@@ -67,6 +67,14 @@
         $('html,body').animate({scrollTop:0},500);
         return false;
       });
+
+      //内容页图片显示
+      $(function(){
+        $('.post p img').width($('.post').width());
+        $(window).resize(function() {
+          $('.post p img').width($('.post').width());
+        });
+      });
     </script>
 </body>
 
