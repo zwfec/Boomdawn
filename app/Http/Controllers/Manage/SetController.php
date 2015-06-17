@@ -31,6 +31,7 @@ class SetController extends Controller
     $copy     = Request::input('copy');
     $page_num = Request::input('page_num');
     $id       = Request::input('id');
+    $comment  = Request::input('comment');
     $page_num = abs(intval($page_num));
     //审核数据
     $v = Validator::make([
@@ -52,6 +53,7 @@ class SetController extends Controller
     $set->des = $des;
     $set->copy = $copy;
     $set->page_num = $page_num;
+    $set->comment = $comment;
     $affectedRows = $set->save();
     if ($affectedRows) {
       return redirect('manage/set')->withErrors('修改成功')->withStatus(1);

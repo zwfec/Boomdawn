@@ -64,6 +64,8 @@ class HomeController extends Controller
     $id = (int)$id;
     //获得关于信息
     $article = Article::find($id);
+    $article->view = ($article->view + 1);
+    $article->save();
     return view('home.article')->withArticle($article)->withName($article->title);
   }
 }

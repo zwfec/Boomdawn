@@ -19,6 +19,7 @@ class CreateSetsTable extends Migration
             $table->string('des');
             $table->string('copy');
             $table->integer('page_num');
+            $table->text('comment');
         });
     }
 

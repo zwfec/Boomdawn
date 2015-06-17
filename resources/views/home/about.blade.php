@@ -21,8 +21,12 @@
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             {!! $about->content !!}
+
+            <hr>
+
+            {{-- 评论 --}}
+            {!! $webset->comment !!}
         </div>
     </div>
 </div>
-
 @stop

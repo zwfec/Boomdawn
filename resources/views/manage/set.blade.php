@@ -34,6 +34,10 @@
                 <input class="span8 inline-input" data-toggle="tooltip" data-trigger="focus" title="" data-placement="top" type="text" data-original-title="文章分页的数量" name="page_num" value="{{        $set->page_num }}" required="">
             </div>
             <div class="field-box">
+                <label>第三方评论代码:</label>
+                <textarea class="span8" rows="4" name="comment">{{ $set->comment }}</textarea>
+            </div>
+            <div class="field-box">
                 <label></label>
                 <input type="hidden" name="id" value="{{ $set->id }}">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
