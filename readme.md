@@ -32,5 +32,7 @@
 
 5.配置主机域名，目录需要指向项目子目录 `public` 例如 `D:/www/Boomdawn/public`
 
-6.现在已经可以访问了 后台地址 `/login` 默认用户名密码都是 `admin`
+6.`storage` `public` `vendor` 目录要给服务器写入的权限
+
+7.现在已经可以访问了 后台地址 `/login` 默认用户名密码都是 `admin`
 
