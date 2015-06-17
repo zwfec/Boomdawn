@@ -53,6 +53,20 @@
         $("pre").addClass("prettyprint");
         prettyPrint();
       })
+
+      //返回顶部
+      $(window).scroll(function() {
+        var wt = $(window).scrollTop();
+        if (wt > 200) {
+          $('#backtop').fadeIn();
+        } else {
+          $('#backtop').fadeOut();
+        }
+      });
+      $('#backtop').click(function() {
+        $('html,body').animate({scrollTop:0},500);
+        return false;
+      });
     </script>
 </body>
 
