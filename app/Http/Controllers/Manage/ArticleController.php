@@ -69,10 +69,13 @@ class ArticleController extends Controller
     //审核数据
     $v = Validator::make([
       'title' => $title,
+      'category' => $category_id,
     ],[
       'title' => 'required',
+      'category' => 'required',
     ],[
-      'title.required' => '标题不能为空',
+      'category.required' => '标题不能为空',
+      'category.required' => '分类不能为空',
     ]);
 
     if ($v->fails()) {
@@ -140,10 +143,13 @@ class ArticleController extends Controller
     //审核数据
     $v = Validator::make([
       'title' => $title,
+      'category' => $category_id,
     ],[
       'title' => 'required',
+      'category' => 'required',
     ],[
-      'title.required' => '标题不能为空',
+      'category.required' => '标题不能为空',
+      'category.required' => '分类不能为空',
     ]);
 
     if ($v->fails()) {
