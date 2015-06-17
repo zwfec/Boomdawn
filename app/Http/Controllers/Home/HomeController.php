@@ -34,7 +34,8 @@ class HomeController extends Controller
     ->simplePaginate(empty(session('page_num')) ? 10 : session('page_num'));
     //获得分类名
     $name = Category::where('id',$id)->pluck('name');
-    return view('home.index')->withList($list)->withName($name);
+    $category_des = Category::where('id',$id)->pluck('des');
+    return view('home.index')->withList($list)->withName($name)->withDes($category_des);
   }
 
   public function getTag($id)

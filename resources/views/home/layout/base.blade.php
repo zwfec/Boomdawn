@@ -13,6 +13,7 @@
     <link href="{{ asset('home/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Custom CSS -->
+    <link href="http://cdn.bootcss.com/prettify/r298/prettify.min.css" rel="stylesheet">
     <link href="{{ asset('home/css/clean-blog.css') }}" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -39,14 +40,20 @@
     @include('home.layout.footer')
 
     <!-- jQuery -->
-    <script src="{{ asset('home/js/jquery.js') }}"></script>
+    <script src="{{ asset('home/js/jquery.min.js') }}"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="{{ asset('home/js/bootstrap.min.js') }}"></script>
 
     <!-- Custom Theme JavaScript -->
+    <script src="http://cdn.bootcss.com/prettify/r298/prettify.min.js"></script>
     <script src="{{ asset('home/js/clean-blog.min.js') }}"></script>
-
+    <script>
+      $(window).load(function(){
+        $("pre").addClass("prettyprint");
+        prettyPrint();
+      })
+    </script>
 </body>
 
 </html>

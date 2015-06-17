@@ -10,15 +10,19 @@
                     <form action="{{ url('manage/change-pwd') }}" method="post">
                     <div class="field-box">
                         <label>原密码:</label>
-                        <input class="span8 inline-input" data-toggle="tooltip" data-trigger="focus" title="请输入原密码" data-placement="right" type="text" name="oldpwd" />
+                        <input class="span8 inline-input" data-toggle="tooltip" data-trigger="focus" title="请输入原密码" data-placement="top" type="text" name="oldpwd" />
                     </div>
                     <div class="field-box">
                         <label>新密码:</label>
-                        <input class="span8 inline-input" data-toggle="tooltip" data-trigger="focus" title="请设置新密码" data-placement="right" type="password" name="newpwd" />
+                        <input class="span8 inline-input" data-toggle="tooltip" data-trigger="focus" title="请设置新密码" data-placement="top" type="password" name="newpwd" />
                     </div>
                     <div class="field-box">
                         <label>确认密码:</label>
-                        <input class="span8 inline-input" data-toggle="tooltip" data-trigger="focus" title="请再次输入新密码" data-placement="right" type="password" name="newpwd2" />
+                        <input class="span8 inline-input" data-toggle="tooltip" data-trigger="focus" title="请再次输入新密码" data-placement="top" type="password" name="newpwd2" />
+                    </div>
+                    <div class="field-box">
+                        <label>用户名:</label>
+                        <input class="span8 inline-input" data-toggle="tooltip" data-trigger="focus" title="不修改可不填写" data-placement="top" type="text" name="username" />
                     </div>
                     <div class="field-box">
                         <label></label>

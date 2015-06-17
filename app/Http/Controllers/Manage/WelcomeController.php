@@ -80,6 +80,9 @@ class WelcomeController extends Controller
     } else {
       //修改密码
       $user->password = Hash::make(Request::input('newpwd'));
+      if (!empty(Request::input('username'))) {
+        $user->username = Request::input('username');
+      }
       $user->save();
       //重新登录
       Session::flush();

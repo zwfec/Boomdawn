@@ -443,3 +443,9 @@ body {
 .list-empty {
   text-align: center;
 }
+
+pre.prettyprint {
+  padding: 20px;
+  border: none;
+  font-size: 15px;
+}

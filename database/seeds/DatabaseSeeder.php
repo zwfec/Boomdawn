@@ -32,7 +32,7 @@ class UserTableSeeder extends Seeder {
           'id'       => 1,
           'title'    => 'Boomdawn',
           'keyword'  => 'Boomdawn',
-          'des'      => 'Boomdawn Blog',
+          'des'      => 'A Simple Blog A Simple People',
           'copy'     => 'Powered by Boomdawn',
           'page_num' => '10',
         ]);
