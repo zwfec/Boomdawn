@@ -42,7 +42,7 @@ class HomeController extends Controller
   {
     $id = (int)$id;
     //获得文章IDS
-    $article_ids = TagArticle::where('id',$id)->lists('article_id')->toArray();
+    $article_ids = TagArticle::where('tag_id',$id)->lists('article_id');
     //获得文章列表
     $list = Article::where('is_show',1)
     ->whereIn('id',$article_ids)->orderBy('sort','desc')->orderBy('id','desc')
