@@ -56,12 +56,12 @@ class ArticleController extends Controller
   public function postAdd()
   {
     $title       = Request::input('title');
-    $sort        = Request::input('sort');
+    $sort        = Request::input('sort',0);
     $category_id = Request::input('category_id');
-    $des         = Request::input('des');
-    $content     = Request::input('content');
-    $is_show     = Request::input('is_show');
-    $tag_id     = Request::input('tag_id');
+    $des         = Request::input('des','');
+    $content     = Request::input('content','');
+    $is_show     = Request::input('is_show',1);
+    $tag_id      = Request::input('tag_id');
     $user_id     = session('uid');
     $created     = time();
     $updated     = time();

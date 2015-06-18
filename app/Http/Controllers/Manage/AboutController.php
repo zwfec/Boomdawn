@@ -25,7 +25,7 @@ class AboutController extends Controller
   public function postEdit()
   {
     $title    = Request::input('title');
-    $content  = Request::input('content');
+    $content  = Request::input('content','');
     $id       = Request::input('id');
 
     //审核数据
