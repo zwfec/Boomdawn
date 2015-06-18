@@ -20,7 +20,7 @@ class CreateArticlesTable extends Migration
             $table->integer('is_show');
             $table->integer('sort');
             $table->integer('user_id');
-            $table->string('category_id');
+            $table->integer('category_id');
             $table->integer('view');
             $table->integer('created');
             $table->integer('updated');
