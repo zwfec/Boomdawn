@@ -30,7 +30,7 @@
                       {{ strip_tags($v->des) }}
                     </h3>
                 </a>
-                <p class="post-meta">Posted by <a href="#">{{ $v->user->username }}</a> on {{ date('Y-n-j',$v->created) }}</p>
+                <p class="post-meta">Posted by <a href="#">{{ $v->user->username }}</a> on {{ date('Y-n-j',$v->created) }}. {{ $v->view }} views</p>
             </div>
             <hr>
             @endforeach

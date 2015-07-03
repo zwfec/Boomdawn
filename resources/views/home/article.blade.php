@@ -8,7 +8,7 @@
                 <div class="post-heading">
                     <h1>{{ $article->title }}</h1>
                     <h2 class="subheading">{{ strip_tags($article->des) }}</h2>
-                    <span class="meta">Posted by <a href="#">{{ $article->user->username }}</a> on {{ date('Y-n-j',$article->created) }}</span>
+                    <span class="meta">Posted by <a href="#">{{ $article->user->username }}</a> on {{ date('Y-n-j',$article->created) }}. {{ $article->view }} views</span>
                 </div>
             </div>
         </div>
