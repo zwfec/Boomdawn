@@ -19,7 +19,7 @@ class CategoryController extends Controller
   public function getIndex()
   {
     //获得数据
-    $list = Category::all();
+    $list = Category::orderBy('sort','desc')->orderBy('id','desc')->all();
     return view('manage.category')->withList($list);
   }
 

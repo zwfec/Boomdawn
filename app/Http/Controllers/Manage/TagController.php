@@ -19,7 +19,7 @@ class TagController extends Controller
   public function getIndex()
   {
     //获得数据
-    $list = Tag::paginate(15);
+    $list = Tag::orderBy('sort','desc')->orderBy('id','desc')->paginate(15);
     return view('manage.tag')->withList($list);
   }
 

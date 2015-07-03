@@ -20,7 +20,7 @@ class ArticleController extends Controller
   public function getIndex()
   {
     //获得数据
-    $list = Article::paginate(15);
+    $list = Article::orderBy('sort','desc')->orderBy('id','desc')->paginate(15);
     return view('manage.article.lists')->with('list',$list);
   }
 
